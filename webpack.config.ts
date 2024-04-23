@@ -50,13 +50,12 @@ module.exports = [
             maxEntrypointSize: 1024000,
             maxAssetSize: 1024000
         },
-        // resolve: {
-        //     extensions: [".ts", ".js"],
-        //     fallback: {
-        //         "crypto": require.resolve("crypto-browserify"),
-        //         "stream": require.resolve("stream-browserify")
-        //     },
-        // },
+        resolve: {
+            extensions: [".ts", ".js"],
+            fallback: {
+                
+            },
+        },
         output: {
             filename: "dart_web3modal_adapter.min.js",
             path: path.resolve(__dirname, 'lib/src'),
