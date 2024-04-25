@@ -25,5 +25,7 @@ flutter:
       web:
         pluginClass: DartWeb3modalAdapter
         fileName: dart_web3modal_adapter.dart
+  assets:
+    - lib/src/dart_web3modal_adapter.min.js
 
   
