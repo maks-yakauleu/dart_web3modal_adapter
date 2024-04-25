@@ -37,4 +37,8 @@ external void printInfo();
 @JS('web3modal.modal')
 external dynamic modal;
 
-class DartWeb3modalAdapter {}
+class DartWeb3modalAdapter {
+  DartWeb3modalAdapter();
+
+  static void registerWith(registrar) {}
+}
