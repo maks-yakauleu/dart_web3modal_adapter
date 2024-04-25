@@ -52,9 +52,21 @@ module.exports = [
         },
         resolve: {
             extensions: [".ts", ".js"],
-            fallback: {
-                
-            },
+            // fallback: {
+            //     "utils/scaffold": path.resolve(__dirname, 'node_modules/@web3modal/solana/dist/esm/src/utils/scaffold/index.js'),
+            // },
+            // alias: {
+            //     '../utils/scaffold/': path.resolve(__dirname, 'node_modules/@web3modal/solana/dist/esm/src/utils/scaffold/index.js')
+            // }
+            // fallback: {
+            //     "utils/scaffold": require.resolve(path.resolve(__dirname, 'node_modules/@web3modal/solana/dist/esm/src/utils/scaffold/index.js')), 
+            // },
+            // alias: {
+            //     '../utils/scaffold/': path.resolve(__dirname, 'node_modules/@web3modal/solana/dist/esm/src/utils/scaffold/index.js')
+            // },
+            // alias: {
+            //     '../utils/scaffold/': path.resolve(__dirname, 'node_modules/@web3modal/solana/dist/esm/src/utils/scaffold/index.js')
+            // }
         },
         output: {
             filename: "dart_web3modal_adapter.min.js",
