@@ -1,7 +1,7 @@
 import { createWeb3Modal } from "@web3modal/solana";
 import { solanaDevnet, solana, solanaTestnet } from "@web3modal/solana/chains";
-
-export {PublicStateControllerState} from "@web3modal/core";
+import type { Provider } from "@web3modal/solana/dist/types/src/utils/scaffold"; // doesn't work???
+//import type { CombinedProvider } from "@web3modal/solana/dist/types/src/utils/scaffold/SolanaTypesUtil";
 
 const metadata = {
     name: "My Website",
@@ -22,17 +22,22 @@ export const modal = createWeb3Modal({
     themeMode: "dark",
 });
 
-export function getWalletProvider() {
-    return modal.getWalletProvider();
-}
 
 export function openModal() {
-    modal.open();
+    return modal.open();
 }
 
 export function closeModal() {
-    modal.close();
+    return modal.close();
 }
 
-//modal.getWalletConnection()
+export function disconnect() {
+    return modal.getWalletProvider().disconnect();
+}
+
+export function isConnected() {
+    const provider = modal.getWalletProvider() as Provider; // without type casting we don't have what we need, but it doesn't compile due to the import???
+    return provider.isConnected();
+}
+
 

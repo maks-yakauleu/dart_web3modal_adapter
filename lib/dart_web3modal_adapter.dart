@@ -32,13 +32,16 @@ Future<void> loadWeb3ModalAdapter() async {
 external dynamic modal;
 
 @JS('web3modal.openModal')
-external void openModal();
+external Future<void> openModal();
 
 @JS('web3modal.closeModal')
-external void closeModal();
+external Future<void> closeModal();
 
-@JS('web3modal.getWalletProvider')
-external dynamic getWalletProvider();
+@JS('web3modal.disconnect')
+external Future<void> disconnect();
+
+@JS('web3modal.isConnected')
+external bool isConnected();
 
 class DartWeb3modalAdapter {
   DartWeb3modalAdapter();
