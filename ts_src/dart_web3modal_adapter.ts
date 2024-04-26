@@ -1,6 +1,8 @@
 import { createWeb3Modal } from "@web3modal/solana";
 import { solanaDevnet, solana, solanaTestnet } from "@web3modal/solana/chains";
 
+export {PublicStateControllerState} from "@web3modal/core";
+
 const metadata = {
     name: "My Website",
     description: "My Website description",
@@ -17,12 +19,14 @@ export const modal = createWeb3Modal({
     chains: chains,
     projectId: projectId,
     solanaConfig: { metadata: metadata },
+    themeMode: "light",
 });
 
 export function openModal() {
     modal.open();
 }
 
-export function printInfo(){
-    console.log(modal.getWalletProvider());
+export function closeModal() {
+    modal.close();
 }
+

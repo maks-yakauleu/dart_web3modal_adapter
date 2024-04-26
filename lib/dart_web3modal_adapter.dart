@@ -28,14 +28,14 @@ Future<void> loadWeb3ModalAdapter() async {
   return completer.future;
 }
 
+@JS('web3modal.modal')
+external dynamic modal;
+
 @JS('web3modal.openModal')
 external void openModal();
 
-@JS('web3modal.printInfo')
-external void printInfo();
-
-@JS('web3modal.modal')
-external dynamic modal;
+@JS('web3modal.closeModal')
+external void closeModal();
 
 class DartWeb3modalAdapter {
   DartWeb3modalAdapter();
