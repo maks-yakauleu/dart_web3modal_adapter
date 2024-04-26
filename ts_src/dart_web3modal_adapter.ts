@@ -22,6 +22,10 @@ export const modal = createWeb3Modal({
     themeMode: "dark",
 });
 
+export function getWalletProvider() {
+    return modal.getWalletProvider();
+}
+
 export function openModal() {
     modal.open();
 }
@@ -29,4 +33,6 @@ export function openModal() {
 export function closeModal() {
     modal.close();
 }
+
+//modal.getWalletConnection()
 

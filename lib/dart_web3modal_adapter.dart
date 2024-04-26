@@ -37,6 +37,9 @@ external void openModal();
 @JS('web3modal.closeModal')
 external void closeModal();
 
+@JS('web3modal.getWalletProvider')
+external dynamic getWalletProvider();
+
 class DartWeb3modalAdapter {
   DartWeb3modalAdapter();
 
