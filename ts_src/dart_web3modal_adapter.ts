@@ -19,7 +19,7 @@ export const modal = createWeb3Modal({
     chains: chains,
     projectId: projectId,
     solanaConfig: { metadata: metadata },
-    themeMode: "light",
+    themeMode: "dark",
 });
 
 export function openModal() {
