@@ -1,6 +1,6 @@
 import { createWeb3Modal } from "@web3modal/solana";
 import { solanaDevnet, solana, solanaTestnet } from "@web3modal/solana/chains";
-import type { Provider } from "@web3modal/solana/dist/types/src/utils/scaffold"; // doesn't work???
+//import type { Provider } from "@web3modal/solana/dist/types/src/utils/scaffold"; // doesn't work???
 //import type { CombinedProvider } from "@web3modal/solana/dist/types/src/utils/scaffold/SolanaTypesUtil";
 
 const metadata = {
@@ -35,9 +35,11 @@ export function disconnect() {
     return modal.getWalletProvider().disconnect();
 }
 
+
 export function isConnected() {
-    const provider = modal.getWalletProvider() as Provider; // without type casting we don't have what we need, but it doesn't compile due to the import???
-    return provider.isConnected();
+    const provider = modal.getWalletProvider() ;
+     // without type casting we don't have what we need, but it doesn't compile due to the import???
+    console.log(provider);
 }
 
 

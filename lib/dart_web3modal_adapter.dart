@@ -41,7 +41,7 @@ external Future<void> closeModal();
 external Future<void> disconnect();
 
 @JS('web3modal.isConnected')
-external bool isConnected();
+external void isConnected();
 
 class DartWeb3modalAdapter {
   DartWeb3modalAdapter();
