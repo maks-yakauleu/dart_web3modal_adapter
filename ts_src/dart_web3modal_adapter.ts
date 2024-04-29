@@ -47,6 +47,9 @@ export function signMessage(message: Uint8Array) {
 //     }[];
 // }>;
 // https://github.com/WalletConnect/web3modal/blob/41e1ab9c33e5506b86de950d16797aa6b3e64b6f/packages/solana/src/connectors/walletConnectConnector.ts#L115
+// seems like 
+// signature just Uint8Array type, and signatures just one object not a list of objects
+// they just serialize this transaction before returning 
 export function signTransaction(transaction: Transaction){
     const provider = modal.getWalletProvider() as Provider;
     return provider.signTransaction(transaction);
