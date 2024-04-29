@@ -1,7 +1,7 @@
 import { createWeb3Modal } from "@web3modal/solana";
 import { solanaDevnet, solana, solanaTestnet } from "@web3modal/solana/chains";
-//import { Provider } from "@web3modal/solana/dist/types/src/utils/scaffold"; // doesn't work???
-//import type { CombinedProvider } from "@web3modal/solana/dist/types/src/utils/scaffold/SolanaTypesUtil";
+//import { Provider } from "@web3modal/solana/dist/types/src/utils/scaffold";
+//import type { UniversalProvider } from "@walletconnect/universal-provider"; // doesn't work???
 
 
 const metadata = {
@@ -38,12 +38,11 @@ export function disconnect() {
 
 
 export function isConnected() {
-    const provider = modal.getWalletProvider();
+    const provider = modal.getWalletProvider() as any;
      // without type casting we don't have what we need, but it doesn't compile due to the import???
     console.log(provider);
     const textEncoder = new TextEncoder();
-    // @ts-ignore
-    provider.signMessage(textEncoder.encode("Hello, World!"));
+    provider.signMessage("dndjdjdjd");
 }
 
 
