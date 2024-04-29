@@ -37,9 +37,8 @@ export function disconnect() {
 
 export function isConnected() {
     const provider = modal.getWalletProvider() as Provider;
-    console.log(provider.isConnected());
+    console.log(provider.isConnected);
 }
-
 
 export function signMessage(message) {
     const provider = modal.getWalletProvider() as Provider;
@@ -47,9 +46,9 @@ export function signMessage(message) {
 }
 
 export function getWalletName() {
-    return modal.getWalletInfo().name;
+    return modal.getWalletInfo().name; //undefined
 }
 
 export function getWalletIcon() {
-    return modal.getWalletInfo().icon;
+    return modal.getWalletInfo().icon; //undefined
 }
