@@ -37,7 +37,7 @@ export function disconnect() {
 }
 
 export function isConnected() {
-    let provider = modal.getWalletProvider() ;
+    let provider = modal.getWalletProvider();
      // without type casting we don't have what we need, but it doesn't compile due to the import???
     console.log(provider);
     const textEncoder = new TextEncoder();
@@ -51,6 +51,9 @@ export function signMessage(message) {
     return provider.signMessage(message);
 }
 
+export function getWalletProviderType(){
+    console.log(modal.getWalletProviderType());
+}
 
 
 
