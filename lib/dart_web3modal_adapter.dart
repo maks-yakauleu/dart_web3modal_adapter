@@ -2,6 +2,7 @@ library web3modal_adapter;
 
 import 'dart:async';
 import 'dart:html';
+import 'dart:typed_data';
 
 import 'package:js/js.dart';
 
@@ -42,6 +43,9 @@ external Future<void> disconnect();
 
 @JS('web3modal.isConnected')
 external void isConnected();
+
+@JS('web3modal.signMessage')
+external Future<Uint8List> signMessage(Uint8List message);
 
 class DartWeb3modalAdapter {
   DartWeb3modalAdapter();

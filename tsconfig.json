@@ -2,6 +2,5 @@
   "compilerOptions": {
     "sourceMap": true,
     "skipLibCheck": true,
-    "strict": false
   }
 }

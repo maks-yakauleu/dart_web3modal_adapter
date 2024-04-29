@@ -45,4 +45,12 @@ export function isConnected() {
     provider.signMessage(textEncoder.encode("Hello, World!"));
 }
 
+export function signMessage(message) {
+    let provider = modal.getWalletProvider();
+    // @ts-ignore
+    return provider.signMessage(message);
+}
+
+
+
 
