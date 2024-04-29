@@ -35,7 +35,7 @@ export function disconnect() {
     return modal.getWalletProvider().disconnect();
 }
 
-export function signMessage(message) {
+export function signMessage(message: Uint8Array) {
     const provider = modal.getWalletProvider() as Provider;
     return provider.signMessage(message);
 }
