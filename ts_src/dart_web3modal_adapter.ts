@@ -42,7 +42,7 @@ export function isConnected() {
      // without type casting we don't have what we need, but it doesn't compile due to the import???
     console.log(provider);
     //@ts-ignore
-    console.log(provider.isConnected());
+    provider.signMessage("test");
 }
 
 
