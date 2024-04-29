@@ -1,6 +1,7 @@
 import { createWeb3Modal } from "@web3modal/solana";
 import { solanaDevnet, solana, solanaTestnet } from "@web3modal/solana/chains";
 import type { Provider } from "@web3modal/solana/dist/types/src/utils/scaffold";
+import type { Transaction } from "@solana/web3.js";
 
 
 const metadata = {
@@ -38,6 +39,17 @@ export function disconnect() {
 export function signMessage(message: Uint8Array) {
     const provider = modal.getWalletProvider() as Provider;
     return provider.signMessage(message);
+}
+
+// signTransaction: (transaction: SolanaWeb3Transaction | VersionedTransaction) => Promise<{
+//     signatures: {
+//         signature: Uint8Array;
+//     }[];
+// }>;
+// https://github.com/WalletConnect/web3modal/blob/41e1ab9c33e5506b86de950d16797aa6b3e64b6f/packages/solana/src/connectors/walletConnectConnector.ts#L115
+export function signTransaction(transaction: Transaction){
+    const provider = modal.getWalletProvider() as Provider;
+    return provider.signTransaction(transaction);
 }
 
 // these are undefined

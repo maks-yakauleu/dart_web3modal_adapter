@@ -22,6 +22,7 @@
     "node": ">=14.0.0"
   },
   "dependencies": {
+    "@solana/web3.js": "^1.91.7",
     "@web3modal/solana": "^4.1.11"
   }
 }
