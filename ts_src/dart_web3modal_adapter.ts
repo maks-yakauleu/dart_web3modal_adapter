@@ -41,8 +41,9 @@ export function isConnected() {
     const provider = modal.getWalletProvider();
      // without type casting we don't have what we need, but it doesn't compile due to the import???
     console.log(provider);
-    //@ts-ignore
-    provider.signMessage("test");
+    const textEncoder = new TextEncoder();
+    // @ts-ignore
+    provider.signMessage(textEncoder.encode("Hello, World!"));
 }
 
 
