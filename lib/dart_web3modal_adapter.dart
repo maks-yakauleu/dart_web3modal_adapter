@@ -47,8 +47,11 @@ external void isConnected();
 @JS('web3modal.signMessage')
 external Future<Uint8List> signMessage(Uint8List message);
 
-@JS('web3modal.getWalletProviderType')
-external void getWalletProviderType();
+@JS('web3modal.getWalletName')
+external String? getWalletName();
+
+@JS('web3modal.getWalletIcon')
+external String? getWalletIcon();
 
 class DartWeb3modalAdapter {
   DartWeb3modalAdapter();

@@ -51,9 +51,12 @@ export function signMessage(message) {
     return provider.signMessage(message);
 }
 
-export function getWalletProviderType(){
-    console.log(modal.getWalletProviderType());
+export function getWalletName() {
+    return modal.getWalletInfo().name;
 }
 
+export function getWalletIcon() {
+    return modal.getWalletInfo().icon;
+}
 
 
