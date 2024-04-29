@@ -24,10 +24,15 @@ module.exports = [
         module: {
             rules: [
                 {
-                    test: /\.(ts|js)?$/,
+                    test: /\.ts$/,
+                    use: 'ts-loader',
                     exclude: /node_modules/,
-                    loader: 'babel-loader',
                 },
+                {  test: /\.m?js/,
+                    resolve: {
+                    fullySpecified: false
+                    }
+                }
             ],
         },
         optimization: {
