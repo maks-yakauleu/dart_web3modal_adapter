@@ -41,17 +41,18 @@ external Future<void> closeModal();
 @JS('web3modal.disconnect')
 external Future<void> disconnect();
 
-@JS('web3modal.isConnected')
-external void isConnected();
-
 @JS('web3modal.signMessage')
 external Future<Uint8List> signMessage(Uint8List message);
 
-@JS('web3modal.getWalletName')
-external String? getWalletName();
+//these are undefined
+// @JS('web3modal.isConnected')
+// external void isConnected();
 
-@JS('web3modal.getWalletIcon')
-external String? getWalletIcon();
+// @JS('web3modal.getWalletName')
+// external String? getWalletName();
+
+// @JS('web3modal.getWalletIcon')
+// external String? getWalletIcon();
 
 class DartWeb3modalAdapter {
   DartWeb3modalAdapter();

@@ -35,20 +35,21 @@ export function disconnect() {
     return modal.getWalletProvider().disconnect();
 }
 
-export function isConnected() {
-    const provider = modal.getWalletProvider() as Provider;
-    console.log(provider.isConnected);
-}
-
 export function signMessage(message) {
     const provider = modal.getWalletProvider() as Provider;
     return provider.signMessage(message);
 }
 
-export function getWalletName() {
-    return modal.getWalletInfo().name; //undefined
-}
+// these are undefined
+// export function isConnected() {
+//     const provider = modal.getWalletProvider() as Provider;
+//     console.log(provider.isConnected);
+// }
 
-export function getWalletIcon() {
-    return modal.getWalletInfo().icon; //undefined
-}
+// export function getWalletName() {
+//     return modal.getWalletInfo().name; 
+// }
+
+// export function getWalletIcon() {
+//     return modal.getWalletInfo().icon; 
+// }
