@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:html';
 import 'dart:typed_data';
 
+import 'package:dart_solana_adapter/solana/core/public_key.dart';
 import 'package:dart_solana_adapter/solana/core/transaction.dart';
 import 'package:js/js.dart';
 
@@ -46,6 +47,9 @@ external Future<void> disconnect();
 
 @JS('web3modal.signMessage')
 external Future<Uint8List> signMessage(Uint8List message);
+
+@JS('web3modal.getPublicKey')
+external PublicKey getPublicKey();
 
 @JS('web3modal.signTransaction')
 external Future<DeserializedTransaction> signTransaction(

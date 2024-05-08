@@ -1,7 +1,7 @@
 import { createWeb3Modal } from "@web3modal/solana";
 import { solanaDevnet, solana, solanaTestnet } from "@web3modal/solana/chains";
 import type { Provider } from "@web3modal/solana/dist/types/src/utils/scaffold";
-import type { Transaction } from "@solana/web3.js";
+import type { PublicKey, Transaction } from "@solana/web3.js";
 
 
 const metadata = {
@@ -41,6 +41,11 @@ export function signMessage(message: Uint8Array) : Promise<Uint8Array> | Promise
 }> {
     const provider = modal.getWalletProvider() as Provider;
     return provider.signMessage(message);
+}
+
+export function getPublicKey() : PublicKey {
+    const provider = modal.getWalletProvider() as Provider;
+    return provider.publicKey;
 }
 
 // signTransaction: (transaction: SolanaWeb3Transaction | VersionedTransaction) => Promise<{
