@@ -58,13 +58,15 @@ export function getPublicKey() : PublicKey {
 // signature just Uint8Array type, and signatures just one object not a list of objects
 // they just serialize this transaction before returning 
 // Map<String, List<Map<String, Uint8List>>> or Map<String, dynamic>
-export function signTransaction(transaction: Transaction) : Promise<{
-    signatures: {
-        signature: Uint8Array;
-    }[];
-}>{
+export function signTransaction(transaction: Transaction) : Promise<Uint8Array>{
     const provider = modal.getWalletProvider() as Provider;
-    return provider.signTransaction(transaction);
+    let signaturePromise = provider.signTransaction(transaction).then((res)=>{
+        console.log(res);
+        console.log(res.signatures[0]);
+        console.log(res.signatures[0].signature);
+        return res.signatures[0].signature;
+    });
+    return signaturePromise;
 }
 
 // these are undefined

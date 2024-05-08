@@ -8,8 +8,6 @@ import 'package:dart_solana_adapter/solana/core/public_key.dart';
 import 'package:dart_solana_adapter/solana/core/transaction.dart';
 import 'package:js/js.dart';
 
-typedef DeserializedTransaction = Map<String, List<Map<String, Uint8List>>>;
-
 Future<void> loadWeb3ModalAdapter() async {
   final script = ScriptElement();
   // Check if the app is running in production
@@ -52,8 +50,7 @@ external Future<Uint8List> signMessage(Uint8List message);
 external PublicKey getPublicKey();
 
 @JS('web3modal.signTransaction')
-external Future<DeserializedTransaction> signTransaction(
-    Transaction transaction);
+external Future<Uint8List> signTransaction(Transaction transaction);
 
 //these are undefined
 // @JS('web3modal.isConnected')

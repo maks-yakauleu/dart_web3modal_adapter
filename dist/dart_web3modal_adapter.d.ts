@@ -7,8 +7,4 @@ export declare function signMessage(message: Uint8Array): Promise<Uint8Array> | 
     signature: Uint8Array;
 }>;
 export declare function getPublicKey(): PublicKey;
-export declare function signTransaction(transaction: Transaction): Promise<{
-    signatures: {
-        signature: Uint8Array;
-    }[];
-}>;
+export declare function signTransaction(transaction: Transaction): Promise<Uint8Array>;
