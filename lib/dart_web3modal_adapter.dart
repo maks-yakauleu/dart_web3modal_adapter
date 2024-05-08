@@ -4,7 +4,10 @@ import 'dart:async';
 import 'dart:html';
 import 'dart:typed_data';
 
+import 'package:dart_solana_adapter/solana/core/transaction.dart';
 import 'package:js/js.dart';
+
+typedef DeserializedTransaction = Map<String, List<Map<String, Uint8List>>>;
 
 Future<void> loadWeb3ModalAdapter() async {
   final script = ScriptElement();
@@ -43,6 +46,10 @@ external Future<void> disconnect();
 
 @JS('web3modal.signMessage')
 external Future<Uint8List> signMessage(Uint8List message);
+
+@JS('web3modal.signTransaction')
+external Future<DeserializedTransaction> signTransaction(
+    Transaction transaction);
 
 //these are undefined
 // @JS('web3modal.isConnected')

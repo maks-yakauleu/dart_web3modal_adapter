@@ -24,19 +24,21 @@ export const modal = createWeb3Modal({
 });
 
 
-export function openModal() {
+export function openModal() : Promise<void>{
     return modal.open();
 }
 
-export function closeModal() {
+export function closeModal() : Promise<void> {
     return modal.close();
 }
 
-export function disconnect() {
+export function disconnect() : Promise<unknown> {
     return modal.getWalletProvider().disconnect();
 }
 
-export function signMessage(message: Uint8Array) {
+export function signMessage(message: Uint8Array) : Promise<Uint8Array> | Promise<{
+    signature: Uint8Array;
+}> {
     const provider = modal.getWalletProvider() as Provider;
     return provider.signMessage(message);
 }
@@ -50,7 +52,12 @@ export function signMessage(message: Uint8Array) {
 // seems like 
 // signature just Uint8Array type, and signatures just one object not a list of objects
 // they just serialize this transaction before returning 
-export function signTransaction(transaction: Transaction){
+// Map<String, List<Map<String, Uint8List>>> or Map<String, dynamic>
+export function signTransaction(transaction: Transaction) : Promise<{
+    signatures: {
+        signature: Uint8Array;
+    }[];
+}>{
     const provider = modal.getWalletProvider() as Provider;
     return provider.signTransaction(transaction);
 }
