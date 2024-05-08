@@ -61,10 +61,6 @@ export function getPublicKey() : PublicKey {
 export function signTransaction(transaction: Transaction) : Promise<Uint8Array>{
     const provider = modal.getWalletProvider() as Provider;
     let signaturePromise = provider.signTransaction(transaction).then((res)=>{
-        console.log("res");
-        console.log(res);
-        console.log(res.signatures[0]);
-        console.log(res.signatures[0].signature);
         return res.signatures[0].signature;
     });
     return signaturePromise;
