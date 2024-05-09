@@ -9,3 +9,4 @@ export declare function signMessage(message: Uint8Array): Promise<Uint8Array> | 
 export declare function getPublicKey(): PublicKey;
 export declare function getName(): string;
 export declare function signTransaction(transaction: Transaction): Promise<Uint8Array>;
+export declare function signAllTransactions(transactions: Transaction[]): Promise<Transaction[]>;

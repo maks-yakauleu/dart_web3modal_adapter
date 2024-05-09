@@ -55,15 +55,10 @@ external PublicKey getPublicKey();
 @JS('web3modal.getName')
 external String getName();
 
-//these are undefined
-// @JS('web3modal.isConnected')
-// external void isConnected();
-
-// @JS('web3modal.getWalletName')
-// external String? getWalletName();
-
-// @JS('web3modal.getWalletIcon')
-// external String? getWalletIcon();
+@JS('web3modal.signAllTransactions')
+external Future<List<Transaction>> signAllTransactions(
+  List<Transaction> transactions,
+);
 
 class DartWeb3modalAdapter {
   DartWeb3modalAdapter();

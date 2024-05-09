@@ -52,17 +52,6 @@ export function getName() : string {
     return provider.name;
 }
 
-
-// signTransaction: (transaction: SolanaWeb3Transaction | VersionedTransaction) => Promise<{
-//     signatures: {
-//         signature: Uint8Array;
-//     }[];
-// }>;
-// https://github.com/WalletConnect/web3modal/blob/41e1ab9c33e5506b86de950d16797aa6b3e64b6f/packages/solana/src/connectors/walletConnectConnector.ts#L115
-// seems like 
-// signature just Uint8Array type, and signatures just one object not a list of objects
-// they just serialize this transaction before returning 
-// Map<String, List<Map<String, Uint8List>>> or Map<String, dynamic>
 export function signTransaction(transaction: Transaction) : Promise<Uint8Array>{
     const provider = modal.getWalletProvider() as Provider;
     let signaturePromise = provider.signTransaction(transaction).then((res)=>{
@@ -71,16 +60,7 @@ export function signTransaction(transaction: Transaction) : Promise<Uint8Array>{
     return signaturePromise;
 }
 
-// these are undefined
-// export function isConnected() {
-//     const provider = modal.getWalletProvider() as Provider;
-//     console.log(provider.isConnected);
-// }
-
-// export function getWalletName() {
-//     return modal.getWalletInfo().name; 
-// }
-
-// export function getWalletIcon() {
-//     return modal.getWalletInfo().icon; 
-// }
+export function signAllTransactions(transactions: Transaction[]) : Promise<Transaction[]> {
+    const provider = modal.getWalletProvider() as Provider;
+    return provider.signAllTransactions(transactions);
+}
