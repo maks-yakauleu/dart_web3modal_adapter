@@ -31,6 +31,30 @@ Future<void> loadWeb3ModalAdapter() async {
   return completer.future;
 }
 
+@JS('web3modal.modal')
+external dynamic modal;
+
+@JS('web3modal.openModal')
+external Future<void> openModal();
+
+@JS('web3modal.closeModal')
+external Future<void> closeModal();
+
+@JS('web3modal.disconnect')
+external Future<void> disconnect();
+
+@JS('web3modal.signMessage')
+external Future<Uint8List> signMessage(Uint8List message);
+
+@JS('web3modal.signTransaction')
+external Future<Uint8List> signTransaction(Transaction transaction);
+
+@JS('web3modal.getPublicKey')
+external PublicKey getPublicKey();
+
+@JS('web3modal.getName')
+external String getName();
+
 //these are undefined
 // @JS('web3modal.isConnected')
 // external void isConnected();
@@ -42,31 +66,7 @@ Future<void> loadWeb3ModalAdapter() async {
 // external String? getWalletIcon();
 
 class DartWeb3modalAdapter {
-  const DartWeb3modalAdapter();
-
-  @JS('web3modal.modal')
-  external static dynamic modal;
-
-  @JS('web3modal.openModal')
-  external static Future<void> openModal();
-
-  @JS('web3modal.closeModal')
-  external static Future<void> closeModal();
-
-  @JS('web3modal.disconnect')
-  external static Future<void> disconnect();
-
-  @JS('web3modal.signMessage')
-  external static Future<Uint8List> signMessage(Uint8List message);
-
-  @JS('web3modal.signTransaction')
-  external static Future<Uint8List> signTransaction(Transaction transaction);
-
-  @JS('web3modal.getPublicKey')
-  external static PublicKey getPublicKey();
-
-  @JS('web3modal.getName')
-  external static String getName();
+  DartWeb3modalAdapter();
 
   static void registerWith(registrar) {}
 }
