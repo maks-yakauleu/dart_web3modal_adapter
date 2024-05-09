@@ -55,9 +55,6 @@ external PublicKey getPublicKey();
 @JS('web3modal.getName')
 external String getName();
 
-@JS('web3modal.isConnected')
-external bool isConnected();
-
 //these are undefined
 // @JS('web3modal.isConnected')
 // external void isConnected();
