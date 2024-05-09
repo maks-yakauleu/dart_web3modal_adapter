@@ -7,6 +7,7 @@ import 'dart:typed_data';
 import 'package:dart_solana_adapter/solana/core/public_key.dart';
 import 'package:dart_solana_adapter/solana/core/transaction.dart';
 import 'package:js/js.dart';
+import 'package:js/js_util.dart';
 
 Future<void> loadWeb3ModalAdapter() async {
   final script = ScriptElement();
@@ -59,6 +60,23 @@ external String getName();
 external Future<List<Transaction>> signAllTransactions(
   List<Transaction> transactions,
 );
+
+Future<List<Transaction>> signAllTransactionsTyped(
+  List<Transaction> transactions,
+) async {
+  final transactionsFuture =
+      promiseToFuture<List<dynamic>>(signAllTransactions(transactions));
+  final untypedTransactions = await transactionsFuture;
+  final typedTransactions = <Transaction>[];
+  for (final transaction in untypedTransactions) {
+    if (transaction is Transaction) {
+      typedTransactions.add(transaction);
+    } else {
+      throw Exception('Unexpected transaction type');
+    }
+  }
+  return typedTransactions;
+}
 
 class DartWeb3modalAdapter {
   DartWeb3modalAdapter();
