@@ -62,5 +62,5 @@ export function signTransaction(transaction: Transaction) : Promise<Uint8Array>{
 
 export function signAllTransactions(transactions: Transaction[]) : Promise<Transaction[]> {
     const provider = modal.getWalletProvider() as Provider;
-    return provider.signAllTransactions(transactions);
+    return provider.signAllTransactions(transactions).then((res) => res);
 }
