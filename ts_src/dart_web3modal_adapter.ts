@@ -60,12 +60,7 @@ export function signTransaction(transaction: Transaction) : Promise<Uint8Array>{
     return signaturePromise;
 }
 
-export async function signAllTransactions(transactions: Transaction[]) : Promise<Transaction[]> {
+export function signAllTransactions(transactions: Transaction[]) : Promise<Transaction[]> {
     const provider = modal.getWalletProvider() as Provider;
-    const signed = await provider.signAllTransactions(transactions);
-    console.log(signed);
-    signed.forEach((transaction) => {
-        console.log(transaction);
-    });
-    return signed;
+    return provider.signAllTransactions(transactions);
 }
