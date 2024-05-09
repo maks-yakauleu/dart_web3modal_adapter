@@ -55,9 +55,6 @@ external Future<Uint8List> signTransaction(Transaction transaction);
 @JS('web3modal.getName')
 external String getName();
 
-@JS('web3modal.connect')
-external Future<void> connect();
-
 //these are undefined
 // @JS('web3modal.isConnected')
 // external void isConnected();

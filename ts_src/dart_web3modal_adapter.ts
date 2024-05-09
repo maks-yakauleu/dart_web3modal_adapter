@@ -52,11 +52,6 @@ export function getName() : string {
     return provider.name;
 }
 
-export function connect() : Promise<void> {
-    const provider = modal.getWalletProvider() as Provider;
-    return provider.connect();
-}
-
 // signTransaction: (transaction: SolanaWeb3Transaction | VersionedTransaction) => Promise<{
 //     signatures: {
 //         signature: Uint8Array;
