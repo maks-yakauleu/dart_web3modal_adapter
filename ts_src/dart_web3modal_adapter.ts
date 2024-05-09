@@ -23,7 +23,6 @@ export const modal = createWeb3Modal({
     themeMode: "dark",
 });
 
-
 export function openModal() : Promise<void>{
     return modal.open();
 }
@@ -46,6 +45,16 @@ export function signMessage(message: Uint8Array) : Promise<Uint8Array> | Promise
 export function getPublicKey() : PublicKey {
     const provider = modal.getWalletProvider() as Provider;
     return provider.publicKey;
+}
+
+export function getName() : string {
+    const provider = modal.getWalletProvider() as Provider;
+    return provider.name;
+}
+
+export function connect() : Promise<void> {
+    const provider = modal.getWalletProvider() as Provider;
+    return provider.connect();
 }
 
 // signTransaction: (transaction: SolanaWeb3Transaction | VersionedTransaction) => Promise<{
