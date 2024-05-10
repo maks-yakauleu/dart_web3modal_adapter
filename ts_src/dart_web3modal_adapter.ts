@@ -72,7 +72,7 @@ export function getBalance() : Promise<number> {
 
 export function isConnected() {
     const provider = modal.getWalletProvider();
-    return provider === undefined;
+    return !(provider === undefined);
 }
 
 
