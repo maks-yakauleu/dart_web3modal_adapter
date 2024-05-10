@@ -65,8 +65,9 @@ export function signAllTransactions(transactions: Transaction[]) : Promise<Trans
     return provider.signAllTransactions(transactions);
 }
 
-export function getBalance() : Promise<number> {
+export async function getBalance() : Promise<number> {
     const walletConnection = modal.getWalletConnection();
+    console.log(await walletConnection.getBalance(getPublicKey()));
     return walletConnection.getBalance(getPublicKey());
 }
 
