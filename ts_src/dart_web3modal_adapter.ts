@@ -65,22 +65,29 @@ export function signAllTransactions(transactions: Transaction[]) : Promise<Trans
     return provider.signAllTransactions(transactions);
 }
 
-export function setupWalletOnConnectEvent(onConnect) : void {
-    const provider = modal.getWalletProvider() as Provider;
-    provider.on('connect', onConnect);
+export function getBalance() : Promise<number> {
+    const walletConnection = modal.getWalletConnection();
+    return walletConnection.getBalance(getPublicKey());
 }
 
-export function setupWalletOnDisconnectEvent(onDisconnect) : void {
-    const provider = modal.getWalletProvider() as Provider;
-    provider.on('disconnect', onDisconnect);
-}
 
-export function removeWalletOnConnectEvent(onConnect) : void {
-    const provider = modal.getWalletProvider() as Provider;
-    provider.removeListener('connect', onConnect);
-}
+// there are no these methods
+// export function setupWalletOnConnectEvent(onConnect) : void {
+//     const provider = modal.getWalletProvider() as Provider;
+//     provider.on('connect', onConnect);
+// }
 
-export function removeWalletOnDisconnectEvent(onDisconnect) : void {
-    const provider = modal.getWalletProvider() as Provider;
-    provider.removeListener('disconnect', onDisconnect);
-}
+// export function setupWalletOnDisconnectEvent(onDisconnect) : void {
+//     const provider = modal.getWalletProvider() as Provider;
+//     provider.on('disconnect', onDisconnect);
+// }
+
+// export function removeWalletOnConnectEvent(onConnect) : void {
+//     const provider = modal.getWalletProvider() as Provider;
+//     provider.removeListener('connect', onConnect);
+// }
+
+// export function removeWalletOnDisconnectEvent(onDisconnect) : void {
+//     const provider = modal.getWalletProvider() as Provider;
+//     provider.removeListener('disconnect', onDisconnect);
+// }
