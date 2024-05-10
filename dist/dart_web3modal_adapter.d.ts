@@ -10,3 +10,7 @@ export declare function getPublicKey(): PublicKey;
 export declare function getName(): string;
 export declare function signTransaction(transaction: Transaction): Promise<Uint8Array>;
 export declare function signAllTransactions(transactions: Transaction[]): Promise<Transaction[]>;
+export declare function setupWalletOnConnectEvent(onConnect: any): void;
+export declare function setupWalletOnDisconnectEvent(onDisconnect: any): void;
+export declare function removeWalletOnConnectEvent(onConnect: any): void;
+export declare function removeWalletOnDisconnectEvent(onDisconnect: any): void;

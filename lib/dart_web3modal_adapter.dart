@@ -78,6 +78,20 @@ Future<List<Transaction>> signAllTransactionsTyped(
   return typedTransactions;
 }
 
+@JS('web3modal.setupWalletOnConnectEvent')
+external void setupWalletOnConnectEvent(
+    void Function(PublicKey publicKey) onConnect);
+
+@JS('web3modal.setupWalletOnDisconnectEvent')
+external void setupWalletOnDisconnectEvent(void Function() onDisconnect);
+
+@JS('web3modal.removeWalletOnConnectEvent')
+external void removeWalletOnConnectEvent(
+    void Function(PublicKey publicKey) onConnect);
+
+@JS('web3modal.removeWalletOnDisconnectEvent')
+external void removeWalletOnDisconnectEvent(void Function() onDisconnect);
+
 class DartWeb3modalAdapter {
   DartWeb3modalAdapter();
 

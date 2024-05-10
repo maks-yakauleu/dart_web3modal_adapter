@@ -64,3 +64,23 @@ export function signAllTransactions(transactions: Transaction[]) : Promise<Trans
     const provider = modal.getWalletProvider() as Provider;
     return provider.signAllTransactions(transactions);
 }
+
+export function setupWalletOnConnectEvent(onConnect) : void {
+    const provider = modal.getWalletProvider() as Provider;
+    provider.on('connect', onConnect);
+}
+
+export function setupWalletOnDisconnectEvent(onDisconnect) : void {
+    const provider = modal.getWalletProvider() as Provider;
+    provider.on('disconnect', onDisconnect);
+}
+
+export function removeWalletOnConnectEvent(onConnect) : void {
+    const provider = modal.getWalletProvider() as Provider;
+    provider.removeListener('connect', onConnect);
+}
+
+export function removeWalletOnDisconnectEvent(onDisconnect) : void {
+    const provider = modal.getWalletProvider() as Provider;
+    provider.removeListener('disconnect', onDisconnect);
+}
