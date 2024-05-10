@@ -11,4 +11,4 @@ export declare function getName(): string;
 export declare function signTransaction(transaction: Transaction): Promise<Uint8Array>;
 export declare function signAllTransactions(transactions: Transaction[]): Promise<Transaction[]>;
 export declare function getBalance(): Promise<number>;
-export declare function isConnected(): void;
+export declare function isConnected(): boolean;

@@ -82,7 +82,7 @@ Future<List<Transaction>> signAllTransactionsTyped(
 external Future<double> getBalance();
 
 @JS('web3modal.isConnected')
-external void isConnected();
+external bool isConnected();
 
 // there are no these methods
 // @JS('web3modal.setupWalletOnConnectEvent')
