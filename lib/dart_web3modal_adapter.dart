@@ -81,6 +81,9 @@ Future<List<Transaction>> signAllTransactionsTyped(
 @JS('web3modal.getBalance')
 external Future<double> getBalance();
 
+@JS('web3modal.isConnected')
+external void isConnected();
+
 // there are no these methods
 // @JS('web3modal.setupWalletOnConnectEvent')
 // external void setupWalletOnConnectEvent(
