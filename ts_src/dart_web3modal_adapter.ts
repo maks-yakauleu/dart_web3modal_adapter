@@ -11,7 +11,7 @@ const metadata = {
     icons: ["https://avatars.mywebsite.com/"],
 };
 
-const chains = [solana, solanaTestnet, solanaDevnet];
+const chains = [solanaDevnet];
 
 // 96fa9cbf333cf05f246ae5cb5afd7239
 const projectId = "d23bfefd133ecce1f6d2ed7b52bbd5b4";
