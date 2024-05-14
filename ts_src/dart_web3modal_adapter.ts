@@ -85,7 +85,6 @@ export function listenIsConnected(listen: (connected: boolean) => void) : void {
 }
 
 
-// there are no these methods
 // provider is undefined when not connected so need to figure out how to call this methods
 export function setupWalletOnConnectEvent(onConnect) : void {
     const provider = modal.getWalletProvider() as Provider;
