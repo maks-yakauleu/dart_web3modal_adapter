@@ -1,6 +1,6 @@
 import { createWeb3Modal } from "@web3modal/solana";
 import { solanaDevnet, solana, solanaTestnet } from "@web3modal/solana/chains";
-import type { Provider } from "@web3modal/solana/dist/types/src/utils/scaffold";
+import type { Provider, SolStoreUtilState } from "@web3modal/solana/dist/types/src/utils/scaffold";
 import type { PublicKey, Transaction } from "@solana/web3.js";
 
 
@@ -74,27 +74,28 @@ export function getBalance() : Promise<number> {
 
 export function isConnected() {
     const provider = modal.getWalletProvider();
-   // modal.subscribeProvider()//!!!!
     return !(provider === undefined);
+}
+
+
+export function listenConnected(listen: (connected: boolean) => void) : void {
+    modal.subscribeProvider((state : SolStoreUtilState) => {
+        console.log(state.isConnected);
+        listen(state.isConnected);
+    });
 }
 
 
 // there are no these methods
 // provider is undefined when not connected so need to figure out how to call this methods
-export function setupWalletOnConnectEvent() : void {
+export function setupWalletOnConnectEvent(onConnect) : void {
     const provider = modal.getWalletProvider() as Provider;
-    console.log('provider');
-    console.log(provider);
-    provider.on('connect', (publicKey) => {
-        console.log('connected', publicKey.toString());
-    });
+    provider?.on('connect', onConnect);
 }
 
 export function setupWalletOnDisconnectEvent(onDisconnect) : void {
     const provider = modal.getWalletProvider() as Provider;
-    console.log('provider');
-    console.log(provider);
-    provider.on('disconnect', onDisconnect);
+    provider?.on('disconnect', onDisconnect);
 }
 
 // export function removeWalletOnConnectEvent(onConnect) : void {

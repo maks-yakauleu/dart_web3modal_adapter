@@ -84,9 +84,13 @@ external Future<double> getBalance();
 @JS('web3modal.isConnected')
 external bool isConnected();
 
+@JS('web3modal.listenConnected')
+external void listenConnected(void Function(bool connected) listen);
+
 // there are no these methods
 @JS('web3modal.setupWalletOnConnectEvent')
-external void setupWalletOnConnectEvent(void Function() onConnect);
+external void setupWalletOnConnectEvent(
+    void Function(PublicKey publicKey) onConnect);
 
 @JS('web3modal.setupWalletOnDisconnectEvent')
 external void setupWalletOnDisconnectEvent(void Function() onDisconnect);
