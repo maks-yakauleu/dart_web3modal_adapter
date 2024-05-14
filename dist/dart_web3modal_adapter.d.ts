@@ -12,3 +12,4 @@ export declare function signTransaction(transaction: Transaction): Promise<Uint8
 export declare function signAllTransactions(transactions: Transaction[]): Promise<Transaction[]>;
 export declare function getBalance(): Promise<number>;
 export declare function isConnected(): boolean;
+export declare function setupWalletOnDisconnectEvent(onDisconnect: any): void;

@@ -84,10 +84,10 @@ export function isConnected() {
 //     provider.on('connect', onConnect);
 // }
 
-// export function setupWalletOnDisconnectEvent(onDisconnect) : void {
-//     const provider = modal.getWalletProvider() as Provider;
-//     provider.on('disconnect', onDisconnect);
-// }
+export function setupWalletOnDisconnectEvent(onDisconnect) : void {
+    const provider = modal.getWalletProvider() as Provider;
+    provider.on('disconnect', onDisconnect);
+}
 
 // export function removeWalletOnConnectEvent(onConnect) : void {
 //     const provider = modal.getWalletProvider() as Provider;
