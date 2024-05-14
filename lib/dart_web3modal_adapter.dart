@@ -57,15 +57,16 @@ external PublicKey getPublicKey();
 external String getName();
 
 @JS('web3modal.signAllTransactions')
-external Future<List<Transaction>> signAllTransactions(
+external Future<List<Transaction>> _signAllTransactions(
   List<Transaction> transactions,
 );
 
-Future<List<Transaction>> signAllTransactionsTyped(
+// without casting by hand it doesn't properly determine the type
+Future<List<Transaction>> signAllTransactions(
   List<Transaction> transactions,
 ) async {
   final transactionsFuture =
-      promiseToFuture<List<dynamic>>(signAllTransactions(transactions));
+      promiseToFuture<List<dynamic>>(_signAllTransactions(transactions));
   final untypedTransactions = await transactionsFuture;
   final typedTransactions = <Transaction>[];
   for (final transaction in untypedTransactions) {
