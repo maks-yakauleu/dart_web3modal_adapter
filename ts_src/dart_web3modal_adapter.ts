@@ -79,9 +79,11 @@ export function isConnected() {
 
 
 // there are no these methods
-export function setupWalletOnConnectEvent(onConnect) : void {
+export function setupWalletOnConnectEvent() : void {
     const provider = modal.getWalletProvider() as Provider;
-    provider.on('connect', onConnect);
+    provider.on('connect', (publicKey) => {
+        console.log('connected', publicKey.toString());
+    });
 }
 
 export function setupWalletOnDisconnectEvent(onDisconnect) : void {

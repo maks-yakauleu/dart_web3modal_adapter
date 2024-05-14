@@ -86,8 +86,7 @@ external bool isConnected();
 
 // there are no these methods
 @JS('web3modal.setupWalletOnConnectEvent')
-external void setupWalletOnConnectEvent(
-    void Function(PublicKey publicKey) onConnect);
+external void setupWalletOnConnectEvent(void Function() onConnect);
 
 @JS('web3modal.setupWalletOnDisconnectEvent')
 external void setupWalletOnDisconnectEvent(void Function() onDisconnect);
