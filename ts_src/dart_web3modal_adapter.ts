@@ -14,7 +14,7 @@ const metadata = {
 const chains = [solanaDevnet, solanaTestnet, solana];
 
 // 96fa9cbf333cf05f246ae5cb5afd7239
-const projectId = "d23bfefd133ecce1f6d2ed7b52bbd5b4";
+const projectId = "901b42e19e921a3965f7f1e89a287d90";
 
 export const modal = createWeb3Modal({
     chains: chains,
