@@ -79,8 +79,11 @@ export function isConnected() {
 
 
 // there are no these methods
+// provider is undefined when not connected so need to figure out how to call this methods
 export function setupWalletOnConnectEvent() : void {
     const provider = modal.getWalletProvider() as Provider;
+    console.log('provider');
+    console.log(provider);
     provider.on('connect', (publicKey) => {
         console.log('connected', publicKey.toString());
     });
@@ -88,6 +91,8 @@ export function setupWalletOnConnectEvent() : void {
 
 export function setupWalletOnDisconnectEvent(onDisconnect) : void {
     const provider = modal.getWalletProvider() as Provider;
+    console.log('provider');
+    console.log(provider);
     provider.on('disconnect', onDisconnect);
 }
 
