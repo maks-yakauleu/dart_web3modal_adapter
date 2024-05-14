@@ -84,6 +84,18 @@ external Future<double> getBalance();
 @JS('web3modal.isConnected')
 external bool isConnected();
 
+/// use this as
+/// ```dart
+/// listenIsConnected(allowInterop(
+///   (connected) {
+///     if (connected) {
+///       onConnected();
+///     } else {
+///       onDisconnected();
+///     }
+///   }
+/// ));
+/// ```
 @JS('web3modal.listenIsConnected')
 external void listenIsConnected(void Function(bool connected) listen);
 
