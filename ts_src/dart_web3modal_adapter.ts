@@ -78,9 +78,8 @@ export function isConnected() {
 }
 
 
-export function listenConnected(listen: (connected: boolean) => void) : void {
+export function listenIsConnected(listen: (connected: boolean) => void) : void {
     modal.subscribeProvider((state : SolStoreUtilState) => {
-        console.log(state.isConnected);
         listen(state.isConnected);
     });
 }
