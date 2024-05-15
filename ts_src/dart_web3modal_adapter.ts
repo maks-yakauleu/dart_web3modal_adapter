@@ -1,5 +1,5 @@
 import { createWeb3Modal } from "@web3modal/solana";
-import { solanaDevnet, solana, solanaTestnet } from "@web3modal/solana/chains";
+import { solana, solanaTestnet } from "@web3modal/solana/chains";
 import type { Provider, SolStoreUtilState } from "@web3modal/solana/dist/types/src/utils/scaffold";
 import type { PublicKey, Transaction } from "@solana/web3.js";
 
@@ -11,7 +11,15 @@ const metadata = {
     icons: ["https://avatars.mywebsite.com/"],
 };
 
-const chains = [solanaDevnet, solanaTestnet];
+const solanaDevnet = {
+    chainId: '8E9rvCKLFQia2Y35HXjjpWzj8weVo44K',
+    name: 'Solana Devnet',
+    currency: 'SOL',
+    explorerUrl: 'https://explorer.solana.com/?cluster=devnet',
+    rpcUrl: 'https://api.devnet.solana.com'
+}
+
+const chains = [solanaDevnet];
 
 // 901b42e19e921a3965f7f1e89a287d90
 // 96fa9cbf333cf05f246ae5cb5afd7239
