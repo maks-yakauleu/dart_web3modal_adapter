@@ -7,7 +7,8 @@ import type { PublicKey, Transaction } from "@solana/web3.js";
 const metadata = {
     name: "Devol Network",
     description: "Complete Crypto Options Solutions",
-    url: "http://localhost:4000/",
+    //     url: "http://localhost:4000/",
+    url: "https://dev-app-05.devol.dev/",
     icons: ["https://avatars.mywebsite.com/"],
 };
 
