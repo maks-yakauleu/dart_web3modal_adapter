@@ -19,7 +19,7 @@ const solanaDevnet = {
     rpcUrl: 'https://api.devnet.solana.com'
 }
 
-const chains = [solanaDevnet];
+const chains = [solanaDevnet, solanaTestnet];
 
 // 901b42e19e921a3965f7f1e89a287d90
 // 96fa9cbf333cf05f246ae5cb5afd7239
