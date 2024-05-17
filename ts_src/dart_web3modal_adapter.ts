@@ -93,17 +93,25 @@ export function listenIsConnected(listen: (connected: boolean) => void) : void {
     });
 }
 
+export function getIcon() : string {
+    return modal.getWalletInfo().icon;
+}
+
+export function getWName() : string {
+    return modal.getWalletInfo().name;
+}
+
 
 // provider is undefined when not connected so need to figure out how to call this methods
-export function setupWalletOnConnectEvent(onConnect) : void {
-    const provider = modal.getWalletProvider() as Provider;
-    provider?.on('connect', onConnect);
-}
+// export function setupWalletOnConnectEvent(onConnect) : void {
+//     const provider = modal.getWalletProvider() as Provider;
+//     provider?.on('connect', onConnect);
+// }
 
-export function setupWalletOnDisconnectEvent(onDisconnect) : void {
-    const provider = modal.getWalletProvider() as Provider;
-    provider?.on('disconnect', onDisconnect);
-}
+// export function setupWalletOnDisconnectEvent(onDisconnect) : void {
+//     const provider = modal.getWalletProvider() as Provider;
+//     provider?.on('disconnect', onDisconnect);
+// }
 
 // export function removeWalletOnConnectEvent(onConnect) : void {
 //     const provider = modal.getWalletProvider() as Provider;

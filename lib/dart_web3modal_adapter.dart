@@ -100,14 +100,20 @@ external bool isConnected();
 @JS('web3modal.listenIsConnected')
 external void listenIsConnected(void Function(bool connected) listen);
 
+@JS('web3modal.getIcon')
+external String getIcon();
+
+@JS('web3modal.getWName')
+external String getWName();
+
 // provider is undefined when not connected so need to figure out how to call this methods
 // looks like need to call [listenIsConnected]
-@JS('web3modal.setupWalletOnConnectEvent')
-external void setupWalletOnConnectEvent(
-    void Function(PublicKey publicKey) onConnect);
+// @JS('web3modal.setupWalletOnConnectEvent')
+// external void setupWalletOnConnectEvent(
+//     void Function(PublicKey publicKey) onConnect);
 
-@JS('web3modal.setupWalletOnDisconnectEvent')
-external void setupWalletOnDisconnectEvent(void Function() onDisconnect);
+// @JS('web3modal.setupWalletOnDisconnectEvent')
+// external void setupWalletOnDisconnectEvent(void Function() onDisconnect);
 
 // @JS('web3modal.removeWalletOnConnectEvent')
 // external void removeWalletOnConnectEvent(

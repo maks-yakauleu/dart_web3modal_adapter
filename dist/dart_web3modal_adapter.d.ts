@@ -13,5 +13,5 @@ export declare function signAllTransactions(transactions: Transaction[]): Promis
 export declare function getBalance(): Promise<number>;
 export declare function isConnected(): boolean;
 export declare function listenIsConnected(listen: (connected: boolean) => void): void;
-export declare function setupWalletOnConnectEvent(onConnect: any): void;
-export declare function setupWalletOnDisconnectEvent(onDisconnect: any): void;
+export declare function getIcon(): string;
+export declare function getWName(): string;
