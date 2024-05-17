@@ -50,22 +50,22 @@ export function signMessage(message: Uint8Array) : Promise<Uint8Array> | Promise
     signature: Uint8Array;
 }> {
     const provider = modal.getWalletProvider() as Provider;
-    return provider.signMessage(message);
+    return provider?.signMessage(message);
 }
 
 export function getPublicKey() : PublicKey {
     const provider = modal.getWalletProvider() as Provider;
-    return provider.publicKey;
+    return provider?.publicKey;
 }
 
 export function getName() : string {
     const provider = modal.getWalletProvider() as Provider;
-    return provider.name;
+    return provider?.name;
 }
 
 export function signTransaction(transaction: Transaction) : Promise<Uint8Array>{
     const provider = modal.getWalletProvider() as Provider;
-    let signaturePromise = provider.signTransaction(transaction).then((res)=>{
+    let signaturePromise = provider?.signTransaction(transaction).then((res)=>{
         return res.signatures[0].signature;
     });
     return signaturePromise;
@@ -73,7 +73,7 @@ export function signTransaction(transaction: Transaction) : Promise<Uint8Array>{
 
 export function signAllTransactions(transactions: Transaction[]) : Promise<Transaction[]> {
     const provider = modal.getWalletProvider() as Provider;
-    return provider.signAllTransactions(transactions);
+    return provider?.signAllTransactions(transactions);
 }
 
 export function getBalance() : Promise<number> {
