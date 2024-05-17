@@ -13,3 +13,4 @@ export declare function signAllTransactions(transactions: Transaction[]): Promis
 export declare function getBalance(): Promise<number>;
 export declare function isConnected(): boolean;
 export declare function listenIsConnected(listen: (connected: boolean) => void): void;
+export declare function handleError(onError: (error: any) => void): void;
