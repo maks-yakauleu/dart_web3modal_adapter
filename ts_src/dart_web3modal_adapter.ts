@@ -86,21 +86,11 @@ export function isConnected() {
     return !(provider === undefined);
 }
 
-
 export function listenIsConnected(listen: (connected: boolean) => void) : void {
     modal.subscribeProvider((state : SolStoreUtilState) => {
         listen(state.isConnected);
     });
 }
-
-export function getIcon() : string {
-    return modal.getWalletInfo().icon;
-}
-
-export function getWName() : string {
-    return modal.getWalletInfo().name;
-}
-
 
 // provider is undefined when not connected so need to figure out how to call this methods
 // export function setupWalletOnConnectEvent(onConnect) : void {
