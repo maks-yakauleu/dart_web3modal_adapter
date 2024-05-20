@@ -48,7 +48,7 @@ external Future<void> disconnect();
 external Future<Uint8List> signMessage(Uint8List message);
 
 @JS('web3modal.signTransaction')
-external Future<Uint8List> signTransaction(Transaction transaction);
+external Future<Transaction> signTransaction(Transaction transaction);
 
 @JS('web3modal.getPublicKey')
 external PublicKey getPublicKey();

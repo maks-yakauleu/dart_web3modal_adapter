@@ -1,7 +1,7 @@
 import { createWeb3Modal } from "@web3modal/solana";
 import { solana, solanaTestnet } from "@web3modal/solana/chains";
 import type { Provider, SolStoreUtilState } from "@web3modal/solana/dist/types/src/utils/scaffold";
-import type { PublicKey, Transaction } from "@solana/web3.js";
+import { PublicKey, Transaction } from "@solana/web3.js";
 
 
 const metadata = {
@@ -63,12 +63,15 @@ export function getName() : string {
     return provider.name;
 }
 
-export function signTransaction(transaction: Transaction) : Promise<Uint8Array>{
+export async function signTransaction(transaction: Transaction) : Promise<Transaction>{
     const provider = modal.getWalletProvider() as Provider;
-    let signaturePromise = provider.signTransaction(transaction).then((res)=>{
-        return res.signatures[0].signature;
-    });
-    return signaturePromise;
+    const signature = await provider.signTransaction(transaction);
+    const serializedTransaction = signature.signatures[0].signature;
+    const resultTransaction = Transaction.from(serializedTransaction);
+    // let signaturePromise = provider.signTransaction(transaction).then((res)=>{
+    //     return res.signatures[0].signature;
+    // });
+    return resultTransaction;
 }
 
 export function signAllTransactions(transactions: Transaction[]) : Promise<Transaction[]> {
