@@ -43,7 +43,9 @@ export function closeModal() : Promise<void> {
 }
 
 export function disconnect() : Promise<unknown> {
-    return modal.getWalletProvider().disconnect();
+    if (isConnected) {
+        return modal.getWalletProvider().disconnect();
+    }
 }
 
 export function signMessage(message: Uint8Array) : Promise<Uint8Array> | Promise<{
