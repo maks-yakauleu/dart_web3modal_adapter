@@ -28,7 +28,7 @@ const projectId = "901b42e19e921a3965f7f1e89a287d90";
 
 export const modal = createWeb3Modal({
     chains: chains,
-    defaultChain: solanaDevnet,
+    // defaultChain: solanaDevnet,
     projectId: projectId,
     solanaConfig: { metadata: metadata },
     themeMode: "dark",
