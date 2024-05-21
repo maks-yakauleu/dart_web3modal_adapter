@@ -1,5 +1,5 @@
 import { createWeb3Modal } from "@web3modal/solana";
-import { solanaDevnet, solanaTestnet } from "@web3modal/solana/chains";
+import { solanaDevnet, solanaTestnet, solana } from "@web3modal/solana/chains";
 import type { Provider, SolStoreUtilState } from "@web3modal/solana/dist/types/src/utils/scaffold";
 import { PublicKey, Transaction } from "@solana/web3.js";
 
@@ -20,7 +20,7 @@ const metadata = {
 //     rpcUrl: 'https://api.devnet.solana.com'
 // }
 
-const chains = [solanaDevnet, solanaTestnet];
+const chains = [solanaDevnet, solanaTestnet, solana];
 
 // 901b42e19e921a3965f7f1e89a287d90
 // 96fa9cbf333cf05f246ae5cb5afd7239
@@ -28,7 +28,7 @@ const projectId = "901b42e19e921a3965f7f1e89a287d90";
 
 export const modal = createWeb3Modal({
     chains: chains,
-    // defaultChain: solanaDevnet,
+    defaultChain: solanaDevnet,
     projectId: projectId,
     solanaConfig: { metadata: metadata },
     themeMode: "dark",
