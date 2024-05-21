@@ -42,7 +42,7 @@ external Future<void> openModal();
 external Future<void> closeModal();
 
 @JS('web3modal.disconnect')
-external Future<void> disconnect();
+external void disconnect();
 
 @JS('web3modal.signMessage')
 external Future<Uint8List> signMessage(Uint8List message);
