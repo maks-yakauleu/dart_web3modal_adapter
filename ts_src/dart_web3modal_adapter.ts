@@ -76,6 +76,18 @@ export async function signTransaction(transaction: Transaction) : Promise<Transa
     return resultTransaction;
 }
 
+export async function signTransactionTest(transaction: Transaction) : Promise<Uint8Array>{
+    const provider = modal.getWalletProvider() as Provider;
+    const signature = await provider.signTransaction(transaction);
+    const serializedTransaction = signature.signatures[0].signature;
+    console.log('serializedTransaction: ', serializedTransaction);
+    
+    // let signaturePromise = provider.signTransaction(transaction).then((res)=>{
+    //     return res.signatures[0].signature;
+    // });
+    return serializedTransaction;
+}
+
 export function signAllTransactions(transactions: Transaction[]) : Promise<Transaction[]> {
     const provider = modal.getWalletProvider() as Provider;
     return provider.signAllTransactions(transactions);
