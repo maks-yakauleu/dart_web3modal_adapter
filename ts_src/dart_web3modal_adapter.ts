@@ -20,7 +20,7 @@ const solanaDevnetFireblocks = {
     rpcUrl: 'https://api.devnet.solana.com'
 }
 
-const chains = [solanaDevnet, solanaTestnet, solana, solanaDevnetFireblocks];
+const chains = [solanaDevnet, solanaTestnet, solanaDevnetFireblocks];
 
 // 901b42e19e921a3965f7f1e89a287d90
 // 96fa9cbf333cf05f246ae5cb5afd7239
@@ -67,11 +67,9 @@ export async function signTransaction(transaction: Transaction) : Promise<Transa
     const provider = modal.getWalletProvider() as Provider;
     const signature = await provider.signTransaction(transaction);
     const serializedTransaction = signature.signatures[0].signature;
-    console.log('signature');
-    console.log(serializedTransaction);
+    console.log('serializedTransaction: ', serializedTransaction);
     const resultTransaction = Transaction.from(serializedTransaction);
-    console.log('resultTransaction');
-    console.log(resultTransaction);
+    console.log('resultTransaction', resultTransaction);
     // let signaturePromise = provider.signTransaction(transaction).then((res)=>{
     //     return res.signatures[0].signature;
     // });
