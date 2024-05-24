@@ -53,6 +53,9 @@ external Future<Transaction> signTransaction(Transaction transaction);
 @JS('web3modal.signTransactionTest')
 external Future<Uint8List> signTransactionTest(Transaction transaction);
 
+@JS('web3modal.signAndSendTransaction')
+external Future<String> signAndSendTransaction(Transaction transaction);
+
 @JS('web3modal.getPublicKey')
 external PublicKey getPublicKey();
 
