@@ -77,6 +77,7 @@ export async function signTransaction(transaction: Transaction) : Promise<Transa
 }
 
 export async function signTransactionTest(transaction: Transaction) : Promise<Uint8Array>{
+    try{
     const provider = modal.getWalletProvider() as Provider;
     const signature = await provider.signTransaction(transaction);
     const serializedTransaction = signature.signatures[0].signature;
@@ -86,6 +87,9 @@ export async function signTransactionTest(transaction: Transaction) : Promise<Ui
     //     return res.signatures[0].signature;
     // });
     return serializedTransaction;
+    } catch(error){
+        console.log("error from library: ", error);
+    }
 }
 
 export function signAndSendTransaction(transaction: Transaction) : Promise<string>{
